@@ -1,0 +1,31 @@
+html{
+  padding: 0% 10%;
+}
+body{
+  font-family: 'Zilla Slab', serif;
+}
+#footer {
+  text-align: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+}
+.times{
+  padding-left: 20px;
+}
+#left{
+  float: left;
+  padding-left: 30%;
+}
+#right{
+  float: right;
+  padding-right: 30%;
+}
+a:hover, a:active, a:link, a:visited
+{
+   color: #0645AD;
+   text-decoration: none;
+}
