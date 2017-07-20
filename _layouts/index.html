@@ -1,17 +1,23 @@
 {% include head.html %}
 <body>
+<div id='header'>
 <h1>West Meadow Tides</h1>
 
 <p>3-day tide data for West Meadow Beach. Please note these are only **PREDICTIONS**</p>
+</div>
+<div id='center'>
 <div id='left'>
+<div id='box1'>
 {% include today.html %}
-
+</div>
 {% include tomorrow.html %}
 </div>
 <div id='right'>
+<div id='box2'>
 {% include day2.html %}
-
+</div>
 {% include day3.html %}
+</div>
 </div>
 
 {{ content }}

@@ -22,16 +22,10 @@ function putZero(num){
   }
 }
 
-
 day = putZero(day);
 month = putZero(month);
 fDay = putZero(fDay);
 fMonth = putZero(fMonth);
-
-console.log(day);
-console.log(month);
-console.log(fDay);
-console.log(fMonth);
 
 function getTime(timeArray){
   var returnValue = "";
@@ -48,12 +42,19 @@ function getTime(timeArray){
   return returnValue.substring(0,returnValue.length -2);
 }
 
+// From shopify
+function getGetOrdinal(n) {
+    var s=["th","st","nd","rd"],
+    v=n%100;
+    return n+(s[(v-20)%10]||s[v]||s[0]);
+ }
 
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
        var result = JSON.parse(xhttp.responseText);
        console.log(result);
        result = result['predictions'];
+       var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October","November", "December"];
        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
        var todayTidesH = new Array();
        var day1TidesH = new Array();
@@ -91,16 +92,25 @@ xhttp.onreadystatechange = function() {
            }
          }
        }
+       //High tides
       document.getElementById("h-today").innerHTML = getTime(todayTidesH);
       document.getElementById("h-tomorrow").innerHTML = getTime(day1TidesH);
       document.getElementById("h-day2").innerHTML =  getTime(day2TidesH);
+      document.getElementById("h-day3").innerHTML =  getTime(day3TidesH);
+      // Low tides
       document.getElementById("l-today").innerHTML = getTime(todayTidesL);
       document.getElementById("l-tomorrow").innerHTML = getTime(day1TidesL);
       document.getElementById("l-day2").innerHTML =  getTime(day2TidesL);
-      document.getElementById("day2-title").innerHTML =  days[day2.getDay()];
-      document.getElementById("h-day3").innerHTML =  getTime(day3TidesH);
       document.getElementById("l-day3").innerHTML =  getTime(day3TidesL);
+      //Add Day of week
+      document.getElementById("day2-title").innerHTML =  days[day2.getDay()];
       document.getElementById("day3-title").innerHTML =  days[day3.getDay()];
+      // Add dates
+      document.getElementById("today-date").innerHTML = monthNames[today.getMonth()] + " " + getGetOrdinal(today.getDate());
+      document.getElementById("tomorrow-date").innerHTML = monthNames[day1.getMonth()] + " " + getGetOrdinal(day1.getDate());
+      document.getElementById("day2-date").innerHTML = monthNames[day2.getMonth()] + " " + getGetOrdinal(day2.getDate());
+      document.getElementById("day3-date").innerHTML = monthNames[day3.getMonth()] + " " + getGetOrdinal(day3.getDate());
+
     }
   };
 xhttp.open("GET", 'https://tidesandcurrents.noaa.gov/api/datagetter?station=8514422&product=predictions&datum=mtl&begin_date='+year+month+day+'&end_date='+fYear+fMonth+fDay+'&interval=hilo&units=english&time_zone=lst&application=web_services&format=json', true);

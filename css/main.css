@@ -4,13 +4,20 @@ html{
 body{
   font-family: 'Zilla Slab', serif;
 }
+p{
+  font-size: 1.25em;
+}
+#header{
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
 #footer {
   text-align: center;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: #efefef;
 }
 .times{
@@ -18,14 +25,30 @@ body{
 }
 #left{
   float: left;
-  padding-left: 30%;
+  padding-left: 15%;
 }
 #right{
   float: right;
-  padding-right: 30%;
+  padding-right: 15%;
 }
 a:hover, a:active, a:link, a:visited
 {
    color: #0645AD;
    text-decoration: none;
+}
+.dates{
+  display: inline;
+  padding-right: 25px;
+  padding-bottom: 50px;
+}
+#box1{
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+}
+#box2{
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+}
+#center{
+  margin: auto;
 }
