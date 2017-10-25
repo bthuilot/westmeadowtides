@@ -2,10 +2,22 @@
 <html>
 <head>
 <title>{{ site.title }}</title>
+<!-- Import Google Font -->
 <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
-<link type='text/css' href='css/main.css' rel='stylesheet'>
+
+<!-- CSS and Favicon -->
+<link type='text/css' href='{{site.url}}/css/main.css' rel='stylesheet'>
 <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-<script src='js/getTides.js'></script>
+
+<!-- Import Bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Tide data script -->
+<script src='{{site.url}}/js/getTides.js'></script>
+
+<!-- Meta -->
 <meta name="description" content="Need to know the tides for westmeadow? Get it from NOAA.">
 <meta name="keywords" content="West,Meadow,Tides,Long,Island,Long Island, West Meadow,NOAA,High,Low">
 </head>

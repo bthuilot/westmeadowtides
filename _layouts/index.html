@@ -5,23 +5,26 @@
 
 <p>3-day tide data for West Meadow Beach. Please note these are only **PREDICTIONS**</p>
 </div>
-<div id='center'>
-<div id='left'>
-<div id='box1'>
-{% include today.html %}
-</div>
-{% include tomorrow.html %}
-</div>
-<div id='right'>
-<div id='box2'>
-{% include day2.html %}
-</div>
-{% include day3.html %}
-</div>
+<div class='container'>
+  <div class='row'>
+    <div class="col-md-6" id='today'>
+      {% include tideData.html %}
+    </div>
+    <div class="col-md-6" id='tomorrow'>
+      {% include tideData.html %}
+    </div>
+  </div>
+  <div class='row'>
+    <div class="col-md-6" id='day3'>
+      {% include tideData.html %}
+    </div>
+    <div class="col-md-6" id='day4'>
+      {% include tideData.html %}
+    </div>
+  </div>
 </div>
 
 {{ content }}
-
 
 {% include footer.html %}
 
