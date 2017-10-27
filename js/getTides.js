@@ -62,11 +62,11 @@ xhttp.onreadystatechange = function() {
          }
          // Adds the times to the page
          var child = document.getElementById(dates[date]).getElementsByClassName('times');
-         child[0].innerHTML = formatTime(tidesArray[0]) + ", " + formatTime(tidesArray[3]);
-         child[1].innerHTML = formatTime(tidesArray[2]) + ", " + formatTime(tidesArray[4]);
-         console.log(child);
+         child[0].innerHTML = formatTime(tidesArray[0]) + ", " + formatTime(tidesArray[2]);
+         child[1].innerHTML = formatTime(tidesArray[1]) + ", " + formatTime(tidesArray[3]);
+	 tidesArray = tidesArray.splice(3,tidesArray.length);
        }
-       console.log(tidesArray);
+       
     }
   };
 var startDate = String(today.getFullYear()) + putZero(today.getMonth() + 1)+putZero(today.getDate());
